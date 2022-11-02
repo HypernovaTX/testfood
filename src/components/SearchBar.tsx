@@ -4,7 +4,7 @@ import { Entypo } from "@expo/vector-icons";
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "#F0EEEE",
+    backgroundColor: "#FFF",
     borderRadius: 8,
     flexDirection: "row",
     height: 48,

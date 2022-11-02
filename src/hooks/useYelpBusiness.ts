@@ -1,35 +1,29 @@
 import { useEffect, useState } from "react";
 import yelp from "../api/yelp";
+import { BusinessDetails } from "../types/BusinessDetailsDTO";
 import { Business } from "../types/BusinessDTO";
 
 type Props = {
-  defaultTerm: string;
-  location: string;
-  limit?: number;
+  id: string;
 };
 
-export default function useYelpSearch({
-  defaultTerm,
-  location,
-  limit = 50,
-}: Props) {
+export default function useYelpBusiness({ id }: Props) {
   /**
    * States
    */
-  const [result, setResult] = useState<Business[]>([]);
+  const [result, setResult] = useState<BusinessDetails>();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   /**
    * Handles
    */
-  const query = async (term: string) => {
+  const query = async () => {
     setError(false);
     setLoading(true);
     try {
-      const params = { term, location, limit };
-      const res = await yelp.get("/search", { params });
-      const processedResult = (res.data?.businesses || []) as Business[];
+      const res = await yelp.get(`/businesses/${id}`);
+      const processedResult = res.data as BusinessDetails;
       setResult(processedResult);
       setLoading(false);
     } catch (e) {
@@ -42,7 +36,7 @@ export default function useYelpSearch({
    * Effect
    */
   useEffect(() => {
-    query(defaultTerm);
+    query();
   }, []);
 
   /**

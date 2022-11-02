@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add axios @types/axios
+  /usr/local/bin/node /usr/local/bin/yarn add @type/react-native-skeleton-content
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/chguo/Library/Android/sdk/emulator:/Users/chguo/Library/Android/sdk/tools:/Users/chguo/Library/Android/sdk/tools/bin:/Users/chguo/Library/Android/sdk/platform-tools
 
 Yarn version: 
   1.22.19
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com/npm/reece-ecomm/axios: Unauthenticated: request used expired credentials. Please renew your credentials.
+  Error: https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com/npm/reece-ecomm/@type%2freact-native-skeleton-content: Package, '@type/react-native-skeleton-content', not found.
       at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66145:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140890:22)
       at Request.emit (node:events:513:28)
@@ -39,7 +39,9 @@ npm manifest:
     },
     "dependencies": {
       "@react-native-community/masked-view": "^0.1.11",
+      "@types/axios": "^0.14.0",
       "@types/react-navigation": "^3.4.0",
+      "axios": "^1.1.3",
       "expo": "~46.0.16",
       "expo-status-bar": "~1.4.0",
       "react": "18.0.0",
@@ -49,6 +51,7 @@ npm manifest:
       "react-native-reanimated": "~2.9.1",
       "react-native-safe-area-context": "4.3.1",
       "react-native-screens": "~3.15.0",
+      "react-native-skeleton-content": "^1.0.28",
       "react-native-web": "~0.18.7",
       "react-navigation": "^4.4.4",
       "react-navigation-stack": "^2.10.4"
@@ -816,7 +819,7 @@ Lockfile:
     dependencies:
       "@babel/helper-plugin-utils" "^7.18.6"
   
-  "@babel/plugin-transform-object-assign@^7.16.7":
+  "@babel/plugin-transform-object-assign@^7.10.4", "@babel/plugin-transform-object-assign@^7.16.7":
     version "7.18.6"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/@babel/plugin-transform-object-assign/-/plugin-transform-object-assign-7.18.6.tgz#7830b4b6f83e1374a5afb9f6111bcfaea872cdd2"
     integrity sha512-mQisZ3JfqWh2gVXvfqYCAAyRs6+7oev+myBsTwW5RnPhYXOTuCEw2oe3YgxlXMViXUS53lG8koulI7mJ+8JE+A==
@@ -1795,6 +1798,13 @@ Lockfile:
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
     integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
   
+  "@types/axios@^0.14.0":
+    version "0.14.0"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/@types/axios/-/axios-0.14.0.tgz#ec2300fbe7d7dddd7eb9d3abf87999964cafce46"
+    integrity sha512-KqQnQbdYE54D7oa/UmYVMZKq7CO4l8DEENzOKc4aBRwxCXSlJXGz83flFx5L7AWrOQnmuN3kVsRdt+GZPPjiVQ==
+    dependencies:
+      axios "*"
+  
   "@types/graceful-fs@^4.1.2":
     version "4.1.5"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/@types/graceful-fs/-/graceful-fs-4.1.5.tgz#21ffba0d98da4350db64891f92a9e5db3cdb4e15"
@@ -1923,6 +1933,11 @@ Lockfile:
     integrity sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==
     dependencies:
       event-target-shim "^5.0.0"
+  
+  abs-svg-path@^0.1.1:
+    version "0.1.1"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/abs-svg-path/-/abs-svg-path-0.1.1.tgz#df601c8e8d2ba10d4a76d625e236a9a39c2723bf"
+    integrity sha512-d8XPSGjfyzlXC3Xx891DJRyZfqk5JU0BJrDQcsWomFIV1/BIzPW5HDH5iDdWpqWaav0YVIEzT1RHTwWr0FFshA==
   
   absolute-path@^0.0.0:
     version "0.0.0"
@@ -2106,6 +2121,15 @@ Lockfile:
     version "2.1.2"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
     integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+  
+  axios@*, axios@^1.1.3:
+    version "1.1.3"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/axios/-/axios-1.1.3.tgz#8274250dada2edf53814ed7db644b9c2866c1e35"
+    integrity sha512-00tXVRwKx/FZr/IDVFt4C+f9FYairX517WoGCL6dpOntqLkZofjhu43F/Xl44UOpqa+9sLFDrG/XAnFsUYgkDA==
+    dependencies:
+      follow-redirects "^1.15.0"
+      form-data "^4.0.0"
+      proxy-from-env "^1.1.0"
   
   babel-core@^7.0.0-bridge.0:
     version "7.0.0-bridge.0"
@@ -3114,6 +3138,11 @@ Lockfile:
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/expo-keep-awake/-/expo-keep-awake-10.2.0.tgz#46f04740bccd321732bbbed93491e2076d5dbbd7"
     integrity sha512-kIRtO4Hmrvxh4E45IPWG/NiUZsuRe1AQwBT09pq+kx8nm6tUS4B9TeL6+1NFy+qVBLbGKDqoQD5Ez7XYTFtBeQ==
   
+  expo-linear-gradient@^11.4.0:
+    version "11.4.0"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/expo-linear-gradient/-/expo-linear-gradient-11.4.0.tgz#20ecad4d11e66e35b31600e5389ec9c4067f7312"
+    integrity sha512-qtIfsLs7NOpfxYrFSJL5uLtNHIkBHQFuQ3f7++XpoJTSm4eQVFxjjkCGWiLIrkpVjKzmgp3DLuIVsadsGX21lA==
+  
   expo-modules-autolinking@0.10.3:
     version "0.10.3"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/expo-modules-autolinking/-/expo-modules-autolinking-0.10.3.tgz#31bfcf3e4b613a7c3949fb1f1e9c23eea4c14caf"
@@ -3342,6 +3371,11 @@ Lockfile:
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/flow-parser/-/flow-parser-0.121.0.tgz#9f9898eaec91a9f7c323e9e992d81ab5c58e618f"
     integrity sha512-1gIBiWJNR0tKUNv8gZuk7l9rVX06OuLzY9AoGio7y/JT4V1IZErEMEq2TJS+PFcw/y0RshZ1J/27VfK1UQzYVg==
   
+  follow-redirects@^1.15.0:
+    version "1.15.2"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
+    integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
+  
   fontfaceobserver@^2.1.0:
     version "2.3.0"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/fontfaceobserver/-/fontfaceobserver-2.3.0.tgz#5fb392116e75d5024b7ec8e4f2ce92106d1488c8"
@@ -3356,6 +3390,15 @@ Lockfile:
     version "3.0.1"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/form-data/-/form-data-3.0.1.tgz#ebd53791b78356a99af9a300d4282c4d5eb9755f"
     integrity sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==
+    dependencies:
+      asynckit "^0.4.0"
+      combined-stream "^1.0.8"
+      mime-types "^2.1.12"
+  
+  form-data@^4.0.0:
+    version "4.0.0"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/form-data/-/form-data-4.0.0.tgz#93919daeaf361ee529584b9b31664dc12c9fa452"
+    integrity sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
     dependencies:
       asynckit "^0.4.0"
       combined-stream "^1.0.8"
@@ -4813,6 +4856,11 @@ Lockfile:
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
     integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
   
+  mockdate@^3.0.2:
+    version "3.0.5"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/mockdate/-/mockdate-3.0.5.tgz#789be686deb3149e7df2b663d2bc4392bc3284fb"
+    integrity sha512-iniQP4rj1FhBdBYS/+eQv7j1tadJ9lJtdzgOpvsOHng/GbcDh2Fhdeq+ZRldrPYdXvCyfFUmFeEwEGXZB5I/AQ==
+  
   ms@2.0.0:
     version "2.0.0"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -4936,6 +4984,13 @@ Lockfile:
     version "3.0.0"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
     integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+  
+  normalize-svg-path@^1.0.1:
+    version "1.1.0"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/normalize-svg-path/-/normalize-svg-path-1.1.0.tgz#0e614eca23c39f0cffe821d6be6cd17e569a766c"
+    integrity sha512-r9KHKG2UUeB5LoTouwDzBy2VxXlHsiM6fyLQvnJa0S5hrhzqElH/CH7TUGhT1fVvIYBIKf3OpY4YJ4CK+iaqHg==
+    dependencies:
+      svg-arc-to-cubic-bezier "^3.0.0"
   
   npm-package-arg@^7.0.0:
     version "7.0.0"
@@ -5160,6 +5215,11 @@ Lockfile:
     dependencies:
       pngjs "^3.3.0"
   
+  parse-svg-path@^0.1.2:
+    version "0.1.2"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/parse-svg-path/-/parse-svg-path-0.1.2.tgz#7a7ec0d1eb06fa5325c7d3e009b859a09b5d49eb"
+    integrity sha512-JyPSBnkTJ0AI8GGJLfMXvKq42cj5c006fnLz6fXy6zfoVjJizi8BNTpu8on8ziI1cKy9d9DGNuY17Ce7wuejpQ==
+  
   parseurl@~1.3.3:
     version "1.3.3"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
@@ -5343,6 +5403,11 @@ Lockfile:
       object-assign "^4.1.1"
       react-is "^16.13.1"
   
+  proxy-from-env@^1.1.0:
+    version "1.1.0"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
+    integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
+  
   pump@^3.0.0:
     version "3.0.0"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/pump/-/pump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
@@ -5473,6 +5538,16 @@ Lockfile:
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.1.tgz#20c603e9a0e765fd6f97396638bdeb0e5a60b010"
     integrity sha512-HOf0jzRnq2/aFUcdCJ9w9JGzN3gdEg0zFE4FyYlp4jtidqU03D5X7ZegGKfT1EWteR0gPBGp9ye5T5FvSWi9Yg==
   
+  react-native-reanimated@2.1.0:
+    version "2.1.0"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/react-native-reanimated/-/react-native-reanimated-2.1.0.tgz#b9ad04aee490e1e030d0a6cdaa43a14895d9a54d"
+    integrity sha512-tlPvvcdf+X7HGQ7g/7npBFhwMznfdk7MHUc9gUB/kp2abSscXNe/kOVKlrNEOO4DS11rNOXc+llFxVFMuNk0zA==
+    dependencies:
+      "@babel/plugin-transform-object-assign" "^7.10.4"
+      fbjs "^3.0.0"
+      mockdate "^3.0.2"
+      string-hash-64 "^1.0.3"
+  
   react-native-reanimated@~2.9.1:
     version "2.9.1"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/react-native-reanimated/-/react-native-reanimated-2.9.1.tgz#d9a932e312c13c05b4f919e43ebbf76d996e0bc1"
@@ -5486,6 +5561,15 @@ Lockfile:
       lodash.isequal "^4.5.0"
       setimmediate "^1.0.5"
       string-hash-64 "^1.0.3"
+  
+  react-native-redash@^16.3.0:
+    version "16.3.0"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/react-native-redash/-/react-native-redash-16.3.0.tgz#a9112ff1b0e0b506a2e2ae50967597e73b69d343"
+    integrity sha512-dhmeYbQ/usGzxZSGZmzmRuIFF2LrtJUKqgseKgf9Jdj0JQ7VM20m/LqTg60+wjxeiyAh2D/vKsQ2U7rMkuoplQ==
+    dependencies:
+      abs-svg-path "^0.1.1"
+      normalize-svg-path "^1.0.1"
+      parse-svg-path "^0.1.2"
   
   react-native-safe-area-context@4.3.1:
     version "4.3.1"
@@ -5506,6 +5590,15 @@ Lockfile:
     dependencies:
       react-freeze "^1.0.0"
       warn-once "^0.1.0"
+  
+  react-native-skeleton-content@^1.0.28:
+    version "1.0.28"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/react-native-skeleton-content/-/react-native-skeleton-content-1.0.28.tgz#0ec3664280033c0d281f02b93a337c677557c20f"
+    integrity sha512-2GWaPuPsQIwRwTVsMDkFSmFmRN1OI1duU5DmYvcNNkGWmwbZpOmho4sZGUx8cvSndIzkQknePg1XMW/rn+mC7g==
+    dependencies:
+      expo-linear-gradient "^11.4.0"
+      react-native-reanimated "2.1.0"
+      react-native-redash "^16.3.0"
   
   react-native-web@~0.18.7:
     version "0.18.9"
@@ -6309,6 +6402,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
     integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+  
+  svg-arc-to-cubic-bezier@^3.0.0:
+    version "3.2.0"
+    resolved "https://reece-694955555685.d.codeartifact.us-east-1.amazonaws.com:443/npm/reece-ecomm/svg-arc-to-cubic-bezier/-/svg-arc-to-cubic-bezier-3.2.0.tgz#390c450035ae1c4a0104d90650304c3bc814abe6"
+    integrity sha512-djbJ/vZKZO+gPoSDThGNpKDO+o+bAeA4XQKovvkNCqnIS2t+S4qnLAGQhyyrulhCFRl1WWzAp0wUDV8PpTVU3g==
   
   tar@^6.0.2, tar@^6.0.5:
     version "6.1.11"

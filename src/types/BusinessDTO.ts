@@ -1,30 +1,15 @@
-export type YelpPriceRanges = "$" | "$$" | "$$$" | "$$$$";
-export type Category = {
-  alias: string;
-  title: string;
-};
+import { Address, Category, Coordinates, YelpPriceRanges } from "./GeneralDTO";
+
 export type Business = {
   categories: Category[];
-  coordinates: {
-    latitude: number;
-    longitude: number;
-  };
+  coordinates: Coordinates;
   display_phone: string;
   distance: number;
   id: string;
   alias: string;
   image_url: string;
   is_closed: boolean;
-  location: {
-    address1: string;
-    address2: string;
-    address3: string;
-    city: string;
-    country: string;
-    display_address: string[];
-    state: string;
-    zip_code: string;
-  };
+  location: Address;
   name: string;
   phone: string;
   price: YelpPriceRanges;

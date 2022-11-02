@@ -1,48 +1,86 @@
-import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { useCallback, useState } from "react";
+import { StyleSheet, Text } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 import ResultsList from "../components/ResultsList";
 import SearchBar from "../components/SearchBar";
 import useYelpSearch from "../hooks/useYelpSearch";
-import { YelpPriceRanges } from "../types/BusinessDTO";
+import { YelpPriceRanges } from "../types/GeneralDTO";
 
 const styles = StyleSheet.create({
-  body: { backgroundColor: "#FFF", width: "100%", height: "100%" },
   error: { color: "#F44" },
-  text: {},
+  text: { marginHorizontal: 16 },
 });
+
+const API_CONFIG = {
+  defaultTerm: "meat",
+  location: "75080",
+};
 
 export default function SearchScreen() {
   /**
    * State
    */
   const [term, setTerm] = useState("");
+  const [lastTerm, setLastTerm] = useState(
+    API_CONFIG.defaultTerm.toLowerCase()
+  );
 
   /**
    * Custom hook
    */
-  const { error, query: doSearch, result: businesses } = useYelpSearch();
+  const {
+    error,
+    loading,
+    query: doSearch,
+    result: businesses,
+  } = useYelpSearch(API_CONFIG);
 
-  function filterResultByPrice(price: YelpPriceRanges) {
-    return businesses.filter((item) => item.price === price);
-  }
+  /**
+   * Callbacks
+   */
+  const filterResultByPrice = useCallback(
+    (p: YelpPriceRanges) => businesses.filter(({ price }) => price === p),
+    [businesses]
+  );
+  const handleSubmit = () => {
+    const newTerm = term.toLowerCase();
+    if (!newTerm || newTerm === lastTerm) {
+      return;
+    }
+    setLastTerm(newTerm);
+    doSearch(term);
+  };
 
   /**
    * Render
    */
   return (
-    <View style={styles.body}>
-      <SearchBar
-        value={term}
-        onChange={setTerm}
-        onSubmit={() => doSearch(term)}
-      />
-      {!!error && <Text style={styles.error}>{error}</Text>}
-      <Text style={styles.text}>{businesses.length} results found.</Text>
-      <ResultsList title="Cost Effective" results={filterResultByPrice("$")} />
-      <ResultsList title="Bit Pricier" results={filterResultByPrice("$$")} />
-      <ResultsList title="Big Spender" results={filterResultByPrice("$$$")} />
-      <ResultsList title="Fine Dining" results={filterResultByPrice("$$$$")} />
-    </View>
+    <>
+      <SearchBar value={term} onChange={setTerm} onSubmit={handleSubmit} />
+      {error && <Text style={styles.error}>API failed!</Text>}
+      <ScrollView>
+        <ResultsList
+          title="Cheap and Affordable"
+          loading={loading}
+          results={filterResultByPrice("$")}
+        />
+        <ResultsList
+          title="A Bit Pricier"
+          loading={loading}
+          results={filterResultByPrice("$$")}
+        />
+        <ResultsList
+          title="Pretty Penny"
+          loading={loading}
+          results={filterResultByPrice("$$$")}
+        />
+        <ResultsList
+          title="For the Top 1 Percent"
+          loading={loading}
+          results={filterResultByPrice("$$$$")}
+        />
+      </ScrollView>
+    </>
   );
 }
