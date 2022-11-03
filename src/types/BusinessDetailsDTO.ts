@@ -12,7 +12,7 @@ export type BusinessDetails = {
   categories: Category[];
   coordinates: Coordinates;
   display_phone: string;
-  hours: Hours;
+  hours: Hours[];
   id: string;
   alias: string;
   image_url: string;

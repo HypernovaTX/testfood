@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import { withNavigation } from "react-navigation";
-import { Business } from "../types/BusinessDTO";
+import { Business } from "../types/BusinessSearchDTO";
 import { AppScreenProps } from "../types/navigation";
 import { placeholderBusinessArray } from "../util/placeholder";
 import ConditionalWrapper from "./ConditionalWrapper";
@@ -40,6 +40,9 @@ function ResultsList({ loading, navigation, results, title }: Props) {
   /**
    * Output
    */
+  if (!results.length) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>

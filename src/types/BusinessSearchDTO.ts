@@ -1,5 +1,16 @@
 import { Address, Category, Coordinates, YelpPriceRanges } from "./GeneralDTO";
 
+export type BusinessSearch = {
+  total: number;
+  businesses: Business[];
+  region: {
+    center: {
+      latitude: number;
+      longitude: number;
+    };
+  };
+};
+
 export type Business = {
   categories: Category[];
   coordinates: Coordinates;

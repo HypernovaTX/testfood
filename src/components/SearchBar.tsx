@@ -1,10 +1,11 @@
-import { Dispatch, useRef, useState } from "react";
+import { Dispatch } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
+import { colors } from "../util/colorPalette";
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "#FFF",
+    backgroundColor: colors.light.white,
     borderRadius: 8,
     flexDirection: "row",
     height: 48,

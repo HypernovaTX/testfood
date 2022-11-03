@@ -4,44 +4,53 @@ import { ScrollView } from "react-native-gesture-handler";
 
 import ResultsList from "../components/ResultsList";
 import SearchBar from "../components/SearchBar";
-import useYelpSearch from "../hooks/useYelpSearch";
+import useYelpAPI from "../hooks/useYelpAPI";
+import { BusinessSearch } from "../types/BusinessSearchDTO";
 import { YelpPriceRanges } from "../types/GeneralDTO";
+import { colors } from "../util/colorPalette";
 
 const styles = StyleSheet.create({
-  error: { color: "#F44" },
+  error: { color: colors.light.error },
   text: { marginHorizontal: 16 },
 });
 
+type APISearchParam = { term: string; location: string; limit: number };
+
 const API_CONFIG = {
-  defaultTerm: "meat",
+  defaultTerm: "steak",
   location: "75080",
+  limit: 50,
 };
 
 export default function SearchScreen() {
   /**
    * State
    */
-  const [term, setTerm] = useState("");
+  const [term, setTerm] = useState(API_CONFIG.defaultTerm);
   const [lastTerm, setLastTerm] = useState(
     API_CONFIG.defaultTerm.toLowerCase()
   );
+  const params = {
+    term,
+    location: API_CONFIG.location,
+    limit: API_CONFIG.limit,
+  };
 
   /**
    * Custom hook
    */
-  const {
-    error,
-    loading,
-    query: doSearch,
-    result: businesses,
-  } = useYelpSearch(API_CONFIG);
+  const { error, loading, query, result } = useYelpAPI<
+    APISearchParam,
+    BusinessSearch
+  >({ params, uri: "/search" });
 
   /**
    * Callbacks
    */
   const filterResultByPrice = useCallback(
-    (p: YelpPriceRanges) => businesses.filter(({ price }) => price === p),
-    [businesses]
+    (p: YelpPriceRanges) =>
+      result?.businesses.filter(({ price }) => price === p) ?? [],
+    [result?.businesses]
   );
   const handleSubmit = () => {
     const newTerm = term.toLowerCase();
@@ -49,7 +58,7 @@ export default function SearchScreen() {
       return;
     }
     setLastTerm(newTerm);
-    doSearch(term);
+    query(params);
   };
 
   /**

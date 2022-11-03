@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
+import { colors } from "../util/colorPalette";
 
 const styles = StyleSheet.create({
   container: {
@@ -10,13 +11,13 @@ const styles = StyleSheet.create({
   ratingText: {
     marginLeft: 4,
     fontSize: 12,
-    color: "#888",
+    color: colors.light.gray,
   },
   ratingTextLoading: {
     marginLeft: 4,
     height: 8,
     width: 177,
-    backgroundColor: "#CCC",
+    backgroundColor: colors.light.loading,
   },
 });
 
@@ -53,7 +54,12 @@ export default function Stars({ count, loading, rating }: Props) {
     return (
       <View style={styles.container}>
         {stars.map((_, i) => (
-          <FontAwesome name="circle" size={16} color="#CCC" key={i} />
+          <FontAwesome
+            name="circle"
+            size={16}
+            color={colors.light.loading}
+            key={i}
+          />
         ))}
         <Text style={styles.ratingTextLoading}> </Text>
       </View>
@@ -62,7 +68,7 @@ export default function Stars({ count, loading, rating }: Props) {
   return (
     <View style={styles.container}>
       {stars.map((kind, i) => (
-        <FontAwesome name={kind} size={16} color="#FC0" key={i} />
+        <FontAwesome name={kind} size={16} color={colors.light.star} key={i} />
       ))}
       <Text style={styles.ratingText}>
         ({rating}) - {count} Review(s)

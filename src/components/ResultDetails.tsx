@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { Business } from "../types/BusinessDTO";
+import { Business } from "../types/BusinessSearchDTO";
+import { colors } from "../util/colorPalette";
 import Stars from "./Stars";
 
 const styles = StyleSheet.create({
@@ -15,10 +16,10 @@ const styles = StyleSheet.create({
     marginVertical: 3,
     height: 10,
     width: 250,
-    backgroundColor: "#CCC",
+    backgroundColor: colors.light.loading,
   },
   thumb: {
-    backgroundColor: "#CCC",
+    backgroundColor: colors.light.loading,
     borderRadius: 4,
     width: 250,
     height: 120,

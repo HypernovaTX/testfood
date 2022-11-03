@@ -1,4 +1,4 @@
-import { Business } from "../types/BusinessDTO";
+import { Business } from "../types/BusinessSearchDTO";
 
 const placeholderBusiness: Business = {
   categories: [],
